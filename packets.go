@@ -812,7 +812,7 @@ func (rows *textRows) readRow(dest []driver.Value) error {
 			return err
 		}
 
-		if isNull {
+		if isNull || len(buf)==0 {
 			dest[i] = nil
 			continue
 		}
